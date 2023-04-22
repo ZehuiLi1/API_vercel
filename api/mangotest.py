@@ -1,3 +1,4 @@
+
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -17,12 +18,3 @@ db = client.gettingStarted
 people = db.people
 a=people.find_one({ "name.last": "Turing" })
 print(a['birth'])
-
-from flask import Flask, request
-import requests
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello from Flask Github!'+a['birth']
